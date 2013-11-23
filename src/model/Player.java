@@ -2,10 +2,10 @@ package model;
 
 import utils.SHAPES;
 
-public abstract class Player
+public class Player
 {
     private final String name;
-    private SHAPES nextMove;
+    private SHAPES move;
 
     public Player(String name)
     {
@@ -17,13 +17,13 @@ public abstract class Player
         return name;
     }
 
-    public void setNextMove(SHAPES nextMove)
+    public void setMove(SHAPES nextMove)
     {
-        this.nextMove = nextMove;
+        this.move = nextMove;
     }
 
-    public SHAPES getNextMove()
+    public SHAPES getMove()
     {
-        return nextMove;
+        return move;
     }
 }

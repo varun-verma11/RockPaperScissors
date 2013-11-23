@@ -17,11 +17,11 @@ public class Game extends JFrame
 {
     private static final String IMAGE_LOADING = "loading.jpg";
     private JLabel timer;
-    private ImageIcon player1Choice;
-    private ImageIcon player2Choice;
-    private ImageIcon rock;
-    private ImageIcon paper;
-    private ImageIcon scissors;
+    private JLabel player1Choice;
+    private JLabel player2Choice;
+    private JLabel rock;
+    private JLabel paper;
+    private JLabel scissors;
 
     public Game()
     {
@@ -39,44 +39,30 @@ public class Game extends JFrame
         pane.setLayout(new BorderLayout());
         pane.add(getHeader(), BorderLayout.NORTH);
         pane.add(getMainBody(), BorderLayout.CENTER);
+        pane.add(getChoiceToolbar(), BorderLayout.SOUTH);
     }
 
     private Component getMainBody()
     {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(1, 2));
-        panel.add(getPlayer1View());
-        panel.add(getPlayer2View());
-        return panel;
-    }
-
-    private Component getPlayer2View()
-    {
-        JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout());
-        panel.add(new JLabel(player2Choice), BorderLayout.CENTER);
-        panel.add(new JPanel(), BorderLayout.SOUTH);
-        return panel;
-    }
-
-    private Component getPlayer1View()
-    {
-        JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout());
-        panel.add(new JLabel(player1Choice), BorderLayout.CENTER);
-        panel.add(getChoiceToolbar(), BorderLayout.SOUTH);
+        panel.add(player1Choice);
+        panel.add(player2Choice);
         return panel;
     }
 
     private Component getChoiceToolbar()
     {
+        JPanel choiceToolbar = new JPanel();
+        choiceToolbar.setLayout(new BorderLayout());
+        choiceToolbar.add(new JLabel("Please select your move."), BorderLayout.NORTH);
         JPanel panel = new JPanel();
-
         panel.setLayout(new GridLayout(1, 3));
-        panel.add(new JLabel(rock));
-        panel.add(new JLabel(paper));
-        panel.add(new JLabel(scissors));
-        return panel;
+        panel.add(rock);
+        panel.add(paper);
+        panel.add(scissors);
+        choiceToolbar.add(panel, BorderLayout.CENTER);
+        return choiceToolbar;
     }
 
     private Component getHeader()
@@ -91,10 +77,41 @@ public class Game extends JFrame
     private void initialiseFields()
     {
         timer = new JLabel("Timer");
-        player1Choice = new ImageIcon(SHAPES.class.getResource(IMAGE_LOADING));
-        player2Choice = new ImageIcon(SHAPES.class.getResource(IMAGE_LOADING));
-        rock = SHAPES.ROCK.getImage();
-        paper = SHAPES.PAPER.getImage();
-        scissors = SHAPES.SCISSORS.getImage();
+        player1Choice = new JLabel(new ImageIcon(SHAPES.class.getResource(IMAGE_LOADING)));
+        player2Choice = new JLabel(new ImageIcon(SHAPES.class.getResource(IMAGE_LOADING)));
+        rock = new JLabel(SHAPES.ROCK.getImage());
+        paper = new JLabel(SHAPES.PAPER.getImage());
+        scissors = new JLabel(SHAPES.SCISSORS.getImage());
     }
+
+    public JLabel getTimer()
+    {
+        return timer;
+    }
+
+    public JLabel getRock()
+    {
+        return rock;
+    }
+
+    public JLabel getPaper()
+    {
+        return paper;
+    }
+
+    public JLabel getScissors()
+    {
+        return scissors;
+    }
+
+    public JLabel getPlayer1Choice()
+    {
+        return player1Choice;
+    }
+
+    public void setPlayer1Choice(JLabel player1Choice)
+    {
+        this.player1Choice = player1Choice;
+    }
+
 }
