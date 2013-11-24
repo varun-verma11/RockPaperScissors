@@ -1,8 +1,7 @@
 package game;
 
-import model.Player;
-import view.Game;
-import controller.GameController;
+import view.WelcomeScreen;
+import controller.WelcomeScreenController;
 
 public class RockPaperScissors
 {
@@ -12,7 +11,7 @@ public class RockPaperScissors
      */
     public static void main(String[] args)
     {
-        new GameController(new Game(), new Player("name"), new Player("name"));
+        new WelcomeScreenController(new WelcomeScreen());
     }
 
 }

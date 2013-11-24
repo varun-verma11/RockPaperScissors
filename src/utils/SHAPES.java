@@ -4,8 +4,7 @@ import javax.swing.ImageIcon;
 
 public enum SHAPES
 {
-
-    ROCK("rock.png"), PAPER("paper.png"), SCISSORS("scissors.png");
+    ROCK("rock2.png"), PAPER("paper2.png"), SCISSORS("scissors2.png");
 
     private ImageIcon image = null;
 
