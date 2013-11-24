@@ -14,6 +14,12 @@ import javax.swing.JPanel;
 
 import utils.SHAPES;
 
+/**
+ * This class is the view for the rock-paper-scissors game
+ * 
+ * @author Varun Verma
+ * 
+ */
 @SuppressWarnings("serial")
 public class Game extends JFrame
 {
@@ -32,6 +38,9 @@ public class Game extends JFrame
     private JButton nextGameButton;
     private JPanel choiceToolbar;
 
+    /**
+     * This constructor build the gui and initialises the default fields
+     */
     public Game()
     {
         super("RockPaperScissors!!");
@@ -44,6 +53,12 @@ public class Game extends JFrame
         this.setVisible(true);
     }
 
+    /**
+     * This method is used to add all components for the view to the given pane.
+     * 
+     * @param pane
+     *            : specifies the content pane to add all the components
+     */
     private void initialiseDisplay(Container pane)
     {
         pane.setLayout(new BorderLayout());
@@ -52,6 +67,11 @@ public class Game extends JFrame
         pane.add(getChoiceToolbar(), BorderLayout.SOUTH);
     }
 
+    /**
+     * This method is used to return the main body of the display
+     * 
+     * @return
+     */
     private Component getMainBody()
     {
         JPanel panel = new JPanel();
@@ -61,21 +81,36 @@ public class Game extends JFrame
         return panel;
     }
 
+    /**
+     * This method builds the choice toolbar to allow the player to choose a
+     * move
+     * 
+     * @return : returns a panel with the choices as images.
+     */
     private Component getChoiceToolbar()
     {
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
         choiceToolbar = new JPanel();
         choiceToolbar.setLayout(new BorderLayout());
         choiceToolbar.add(new JLabel("Please select your move."), BorderLayout.NORTH);
-        JPanel panelTemp = new JPanel();
-        panelTemp.setLayout(new GridLayout(1, 3));
-        panelTemp.add(rock);
-        panelTemp.add(paper);
-        panelTemp.add(scissors);
-        choiceToolbar.add(panelTemp, BorderLayout.CENTER);
-        choiceToolbar.add(nextGameButton, BorderLayout.SOUTH);
-        return choiceToolbar;
+        JPanel choices = new JPanel();
+        choices.setLayout(new GridLayout(1, 3));
+        choices.add(rock);
+        choices.add(paper);
+        choices.add(scissors);
+        choiceToolbar.add(choices, BorderLayout.CENTER);
+        panel.add(choiceToolbar, BorderLayout.CENTER);
+        panel.add(nextGameButton, BorderLayout.SOUTH);
+        return panel;
     }
 
+    /**
+     * This method is used to build the main header for the display
+     * 
+     * @return : returns a panel with title, and label for timers ,and names of
+     *         each players with there scores
+     */
     private Component getHeader()
     {
         JPanel panel = new JPanel();
@@ -95,6 +130,9 @@ public class Game extends JFrame
         return panel;
     }
 
+    /**
+     * This method is used to initialise all the fields for this class.
+     */
     private void initialiseFields()
     {
         timer = new JLabel("Timer");
@@ -110,6 +148,10 @@ public class Game extends JFrame
         nextGameButton = new JButton("Next Game");
     }
 
+    /**
+     * This method resets the choices of the player, uses a black box to display
+     * no choice.
+     */
     public void resetPlayerChoices()
     {
         player1Choice.setIcon(IMAGE_LOADING);
@@ -117,6 +159,10 @@ public class Game extends JFrame
         resetChoiceBorders();
     }
 
+    /**
+     * This method is used to reset the border of each of the choices presented
+     * to the user
+     */
     public void resetChoiceBorders()
     {
         rock.setBorder(null);
@@ -179,9 +225,19 @@ public class Game extends JFrame
         return nextGameButton;
     }
 
+    /**
+     * This method is used to hide the options for user to enter the move
+     */
     public void hideChoiceToolbar()
     {
         choiceToolbar.setVisible(false);
     }
 
+    /**
+     * This method is used to show the choices for user to enter the move.
+     */
+    public void showChoiceToolbar()
+    {
+        choiceToolbar.setVisible(true);
+    }
 }

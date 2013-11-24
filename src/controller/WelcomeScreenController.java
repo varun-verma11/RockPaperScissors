@@ -9,16 +9,32 @@ import model.Player;
 import view.Game;
 import view.WelcomeScreen;
 
+/**
+ * This class is the controller for the main welcome screen
+ * 
+ * @author Varun Verma
+ * 
+ */
 public class WelcomeScreenController
 {
     private final WelcomeScreen view;
 
+    /**
+     * This is a constructor for the Welcome Screen.
+     * 
+     * @param view
+     *            : specifies the view for this controller
+     */
     public WelcomeScreenController(WelcomeScreen view)
     {
         this.view = view;
         addEventListenersToButtons();
     }
 
+    /**
+     * This method add the mouse listeners to the buttons for the welcome screen
+     * to intialise the game accordingly
+     */
     private void addEventListenersToButtons()
     {
         view.getHumanVsComp().addMouseListener(new MouseAdapter()

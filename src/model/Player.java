@@ -2,11 +2,23 @@ package model;
 
 import utils.SHAPES;
 
+/**
+ * This class is used to model a player in the Rock paper scissors game
+ * 
+ * @author Varun Verma
+ * 
+ */
 public class Player
 {
     private final String name;
     private SHAPES move;
 
+    /**
+     * This is a constructor for player to intialise with a name
+     * 
+     * @param name
+     *            :specifies the name
+     */
     public Player(String name)
     {
         this.name = name;
