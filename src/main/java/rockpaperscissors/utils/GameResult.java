@@ -1,4 +1,4 @@
-package utils;
+package rockpaperscissors.utils;
 
 /**
  * This enum is for the result of the game. There are three possibilities: WIN,

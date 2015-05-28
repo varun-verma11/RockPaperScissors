@@ -1,4 +1,4 @@
-package view;
+package rockpaperscissors.view;
 
 import java.awt.Container;
 import java.awt.GridLayout;

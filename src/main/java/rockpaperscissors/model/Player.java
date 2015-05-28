@@ -1,6 +1,6 @@
-package model;
+package rockpaperscissors.model;
 
-import utils.SHAPES;
+import rockpaperscissors.utils.SHAPES;
 
 /**
  * This class is used to model a player in the Rock paper scissors game
