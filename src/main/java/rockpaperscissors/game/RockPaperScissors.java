@@ -1,7 +1,7 @@
-package game;
+package rockpaperscissors.game;
 
-import view.WelcomeScreen;
-import controller.WelcomeScreenController;
+import rockpaperscissors.view.WelcomeScreen;
+import rockpaperscissors.controller.WelcomeScreenController;
 
 public class RockPaperScissors
 {

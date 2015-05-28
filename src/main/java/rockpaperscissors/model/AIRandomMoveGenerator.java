@@ -1,11 +1,11 @@
-package model;
+package rockpaperscissors.model;
+
+import rockpaperscissors.utils.SHAPES;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
-import utils.SHAPES;
 
 /**
  * This is a random move generator for the AI player.

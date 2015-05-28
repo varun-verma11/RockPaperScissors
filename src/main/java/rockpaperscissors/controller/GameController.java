@@ -1,21 +1,19 @@
-package controller;
+package rockpaperscissors.controller;
 
-import java.awt.Color;
+import rockpaperscissors.model.AIRandomMoveGenerator;
+import rockpaperscissors.model.Player;
+import rockpaperscissors.utils.GameResult;
+import rockpaperscissors.utils.SHAPES;
+import rockpaperscissors.view.Game;
+
+import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Random;
-
-import javax.swing.BorderFactory;
-import javax.swing.Timer;
-import javax.swing.border.Border;
-
-import model.AIRandomMoveGenerator;
-import model.Player;
-import utils.GameResult;
-import utils.SHAPES;
-import view.Game;
 
 /**
  * This is the controller class for the Rock Scissors Paper game.

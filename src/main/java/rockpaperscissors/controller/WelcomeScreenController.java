@@ -1,13 +1,12 @@
-package controller;
+package rockpaperscissors.controller;
 
+import rockpaperscissors.model.Player;
+import rockpaperscissors.view.Game;
+import rockpaperscissors.view.WelcomeScreen;
+
+import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
-import javax.swing.JOptionPane;
-
-import model.Player;
-import view.Game;
-import view.WelcomeScreen;
 
 /**
  * This class is the controller for the main welcome screen
